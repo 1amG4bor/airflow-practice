@@ -13,6 +13,7 @@ CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${A
 
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 pip install "pandas<2.2.0"
+pip install pyarrow
 pip install SQLAlchemy
 pip install sqlite3
 pip install psycopg2-binary

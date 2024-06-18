@@ -23,9 +23,14 @@ There is a bash script named `setup.sh` that helps to:
 ## Run the workflows
 
 - First you need to create/setup your local database(s)
-- `airflow db init`: initialize the database backend
-- `airflow scheduler`: run the scheduler that monitors all tasks and DAGs, then triggers the task with the pre-configured `executor`. ([See more..](#scheduler))
-- `airflow webserver`: run the webserver to access the Airflow UI. ([See more..](#webserver-and-ui))
+- Initialize the database backend: `airflow db init`: 
+- Create a user for yourself: `airflow users create -e email -u username -p password -r role -f firstName -l lastName` (*role=Admin*)
+- You can check it by: `airflow users list`
+- You can modify the airflow config in airflow.cfg
+    - If you don't want see the default examples - `load_examples = False`
+    - If you want to check db connection in the UI - `test_connection = Enabled`
+- Run the scheduler: `airflow scheduler` (*It monitors all tasks and DAGs, then triggers the task with the pre-configured `executor`. - [See more..](#scheduler)*)
+- Run the webserver: `airflow webserver` (*It gives you access the Airflow UI. - [See more..](#webserver-and-ui)*)
 
 # Summary of Apache Airflow and its components
 
